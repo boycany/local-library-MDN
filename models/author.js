@@ -16,11 +16,11 @@ const AuthorSchema = new Schema({
   date_of_death: { type: Date },
 });
 
-AuthorSchema.virtual("name").get(() => {
+AuthorSchema.virtual('name').get(function(){
   return this.family_name + ", " + this.first_name;
 });
 
-AuthorSchema.virtual("url").get(function () {
+AuthorSchema.virtual('url').get(function(){
   return "/catalog/author/" + this._id;
 });
 
